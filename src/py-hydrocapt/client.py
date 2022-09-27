@@ -4,16 +4,11 @@ import copy
 import time
 from typing import Any
 from typing import Dict
-from typing import List
 from typing import Optional
 
 
-from lxml import html, etree
+from lxml import etree
 from dateutil.parser import parse
-
-import requests
-from requests import Response
-from requests import Session
 
 
 from datetime import datetime
@@ -413,3 +408,17 @@ class HydrocaptClient(object):
         curr_states[command] = state
         self.set_all_command_states(curr_states)
 
+
+    def get_all_datas(self):
+        curr_states = self.get_commands_current_states()
+        curr_measure = self.get_pool_measure_latest()
+
+        res = {}
+
+        for k,v in curr_states.items():
+            res[k] = v
+
+        for k,v in curr_measure.items():
+            res[k] = v
+
+        return res
