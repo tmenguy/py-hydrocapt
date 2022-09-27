@@ -253,7 +253,7 @@ class HydrocaptClient(object):
 
         internal_commands = {}
 
-        for k_ext, v_ext in external_commands:
+        for k_ext, v_ext in external_commands.items():
             k_int_trad = HYDROCAPT_EXTERNAL_TO_INTERNAL_COMMANDS.get(k_ext)
             if k_int_trad is not None:
                 val_int = k_int_trad[1].get(v_ext, k_int_trad[1][k_int_trad[2]])
@@ -266,7 +266,7 @@ class HydrocaptClient(object):
 
         external_commands = {}
 
-        for k_int, v_int in internal_commands:
+        for k_int, v_int in internal_commands.items():
             k_ext_trad = HYDROCAPT_INTERNAL_TO_EXTERNAL_COMMANDS.get(k_int)
             if k_ext_trad is not None:
                 val_ext = k_ext_trad[1].get(v_int, k_ext_trad[1][k_ext_trad[2]])
