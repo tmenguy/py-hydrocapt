@@ -69,7 +69,9 @@ class HydrocaptClient(object):
             self.pool_internal_id = session.get_internal_pool_id()
         return self.pool_internal_id
 
-
+    def is_connection_ok(self):
+        pool_id = self._get_pool_internal_id()
+        return  pool_id >= 0
 
     def _get_pool_measure_latest(self) -> Dict[str, Any]:
         """Retrieve most recents measures.
