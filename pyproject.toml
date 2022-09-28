@@ -1,5 +1,5 @@
 [project]
-name = "py-hydrocapt"
+name = "py_hydrocapt"
 version = "0.0.1"
 authors = [{ name="Thomas Menguy", email="thomas.menguy@gmail.com" },]
 description = "A simple package to get poolstates and measures for a Diffazur/Hydrocapt equipped pool"
