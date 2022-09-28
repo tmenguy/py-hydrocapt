@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "py-hydrocapt"
 version = "0.0.1"
@@ -22,6 +26,3 @@ dependencies = [
 "Homepage" = "https://github.com/tmenguy/py-hydrocapt"
 "Bug Tracker" = "https://github.com/tmenguy/py-hydrocapt/issues"
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
