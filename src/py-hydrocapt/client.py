@@ -401,24 +401,34 @@ class HydrocaptClient(object):
 
         self._saved_states = saved_states
 
+        return saved_states
+
 
     def set_command_state(self, command, state):
 
         curr_states = self.get_commands_current_states()
         curr_states[command] = state
-        self.set_all_command_states(curr_states)
+        return self.set_all_command_states(curr_states)
 
 
-    def get_all_datas(self):
-        curr_states = self.get_commands_current_states()
-        curr_measure = self.get_pool_measure_latest()
+
+
+    def get_packaged_data(self):
 
         res = {}
 
-        for k,v in curr_states.items():
+        for k,v in self._saved_states.items():
             res[k] = v
 
-        for k,v in curr_measure.items():
+        for k,v in self._saved_read_values.items():
             res[k] = v
 
         return res
+
+
+    def fetch_all_data(self):
+        self.get_commands_current_states()
+        self.get_pool_measure_latest()
+        return self.get_packaged_data()
+
+
