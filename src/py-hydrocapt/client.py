@@ -14,9 +14,6 @@ from dateutil.parser import parse
 from datetime import datetime
 from datetime import timedelta
 
-import json
-
-
 #if issues with .maymodule relative imports
 if __package__ is None or len(__package__) <= 1:
     import sys

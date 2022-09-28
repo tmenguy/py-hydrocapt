@@ -1,0 +1,28 @@
+[project]
+name = "py-hydrocapt"
+version = "0.0.1"
+authors = [{ name="Thomas Menguy", email="thomas.menguy@gmail.com" },]
+description = "A simple package to get poolstates and measures for a Diffazur/Hydrocapt equipped pool"
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["diffazur", "hydrocapt", "pool", "piscine", "homeassistant"]
+
+dependencies = [
+  'lxml >= 4.6.0',
+  'requests >= 2.22',
+  'python-dateutil >= 2.8.0',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/tmenguy/py-hydrocapt"
+"Bug Tracker" = "https://github.com/tmenguy/py-hydrocapt/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

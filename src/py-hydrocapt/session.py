@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """Session manager for the hydrocapt API in order to maintain authentication between calls."""
-from urllib.parse import quote_plus
+#from urllib.parse import quote_plus
 
 
 import requests
-from requests import Response
 from requests import Session
 
 from typing import Any
@@ -14,7 +13,7 @@ from typing import Optional
 
 from .exceptions import HydrocaptError
 
-from lxml import html, etree
+from lxml import html
 
 from .const import HYDROCAPT_LOGIN_URL
 from .const import HYDROCAPT_DISCONNECT_URL
