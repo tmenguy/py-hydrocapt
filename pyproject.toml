@@ -5,7 +5,6 @@ authors = [{ name="Thomas Menguy", email="thomas.menguy@gmail.com" },]
 description = "A simple package to get poolstates and measures for a Diffazur/Hydrocapt equipped pool"
 readme = "README.md"
 requires-python = ">=3.7"
-license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
