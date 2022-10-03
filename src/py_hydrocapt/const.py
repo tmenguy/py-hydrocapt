@@ -18,6 +18,14 @@ for k_ext, v_trad in HYDROCAPT_EXTERNAL_TO_INTERNAL_COMMANDS.items():
     HYDROCAPT_INTERNAL_TO_EXTERNAL_COMMANDS[v_trad[0]] = (k_ext, int_cmd_to_ext, v_trad[1][v_trad[2]])
 
 
+HYDROCAPT_EXTERNAL_COMMANDS = {}
+for k_ext, v_trad in HYDROCAPT_EXTERNAL_TO_INTERNAL_COMMANDS.items():
+    default_v = v_trad[2]
+    cmds = [default_v]
+    for k in v_trad[1]:
+        if k != default_v:
+            cmds.append(k)
+    HYDROCAPT_EXTERNAL_COMMANDS[k_ext] = cmds
 
 HYDROCAPT_LOGIN_URL = "https://www.hydrocapt.fr/pool/poolLogin/login"
 HYDROCAPT_DISCONNECT_URL = "https://www.hydrocapt.fr/pool/poolLogin/disconnect"

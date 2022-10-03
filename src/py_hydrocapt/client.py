@@ -32,6 +32,7 @@ from .const import HYDROCAPT_GET_POOL_COMMAND_URL
 from .const import HYDROCAPT_EXTERNAL_TO_INTERNAL_COMMANDS
 from .const import HYDROCAPT_INTERNAL_TO_EXTERNAL_COMMANDS
 
+from .const import HYDROCAPT_EXTERNAL_COMMANDS
 
 from .const import HYDROCAPT_SAVE_POOL_COMMAND_URL
 from .const import HYDROCAPT_POOL_LIST_OWN_URL
@@ -406,10 +407,14 @@ class HydrocaptClient(object):
     def set_command_state(self, command, state):
 
         curr_states = self.get_commands_current_states()
+        prev_state = curr_states.get(command)
         curr_states[command] = state
-        return self.set_all_command_states(curr_states)
+        self.set_all_command_states(curr_states)
+        return prev_state
 
 
+    def get_commands_and_options(self):
+        return HYDROCAPT_EXTERNAL_COMMANDS
 
 
     def get_packaged_data(self):
